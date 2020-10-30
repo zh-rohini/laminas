@@ -1,0 +1,10 @@
+<h1>Add New</h1>
+
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url());
+
+echo $this->partial('student/index/form', [
+    'form' => $form,
+    'submitLabel' => 'Add new',
+]);

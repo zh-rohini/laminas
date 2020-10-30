@@ -1,0 +1,22 @@
+<h1>Students</h1>
+
+<div class="list-group">
+<?php foreach ($this->students as $student): ?>
+  <div class="list-group-item">
+    <h4 class="list-group-item-heading">
+      <a href="<?= $this->url('student/edit', ['id' => $student['id']]) ?>">
+        <?= $student['name'] ?>
+      </a>
+    </h4>
+
+    <div class="btn-group" role="group" aria-label="Student actions">
+      <a class="btn btn-xs btn-default" href="<?= $this->url('student/edit', ['id' => $student['id']]) ?>">Edit</a>
+      <a class="btn btn-xs btn-danger" href="<?= $this->url('student/delete', ['id' => $student['id']]) ?>">Delete</a>
+    </div>
+  </div>
+<?php endforeach ?>
+</div>
+
+<div class="btn-group" role="group" aria-label="Add actions">
+  <a class="btn btn-primary" href="<?= $this->url('student/add') ?>">Add Record</a>
+</div>
